@@ -1,3 +1,5 @@
+// Game server init
+
 var express = require('express'),
     app = express(),
     http = require('http').Server(app),
@@ -15,8 +17,21 @@ app.get('/', function(req, res){
 });
 
 http.listen(server_port, server_ip_address, function() {
-  console.log("Listening on " + server_ip_address + ", port " + server_port);
+  console.log("Game Listening on " + server_ip_address + ", port " + server_port);
 });
 
 var gameController = new GameController(io);
 gameController.init();
+
+io.on('connection', function (socket) {
+    console.log('a user connected');
+    socket.on('disconnect', function () {
+        console.log('user disconnected');
+    });
+});
+
+io.on('connection', function (socket) {
+    socket.on('chat message', function (msg) {
+        io.emit('chat message', msg);
+    });
+});

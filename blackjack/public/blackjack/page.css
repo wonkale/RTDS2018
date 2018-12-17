@@ -1,31 +1,18 @@
 #dealer {
-  width: 100%;
+  width: 50%;
   margin: auto;
   float: left;
-  min-height: 410px;
-  background: transparent url('https://www.clowerweb.com/cors/blackjack/table.png') center no-repeat;
-  background-size: 100%;
-}
-#score {
-  color: black;
-  font-size: 30px;
-  background: white;
-  width: 40px;
+  min-height: 300px;
+  background-color: forestgreen;
 }
 
 #options {
+  width: 26%;
   float: left;
 }
 
 #deal {
-  float: left;
   padding: 20px;
-  background-color: rgb(111, 179, 113);
-}
-#exit {
-  padding: 15px;
-  background-color: rgb(233, 68, 62);
-  float: right;
 }
 
 #players {

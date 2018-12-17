@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e0b6f7c6-e7ee-4123-9139-87bc9bcb5c2c}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>app.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="app.js" />
+    <Content Include="public\index.html" />
+    <Content Include="public\global.js" />
+    <Content Include="public\jquery-3.1.1.min.js" />
+    <Content Include="scripts\blackjack.js" />
+    <Content Include="scripts\cards.js" />
+    <Content Include="scripts\gameController.js" />
+    <Content Include="public\blackjack\page.html" />
+    <Content Include="public\blackjack\page.css" />
+    <Content Include="public\img\C10.gif" />
+    <Content Include="public\img\C2.gif" />
+    <Content Include="public\img\C3.gif" />
+    <Content Include="public\img\C4.gif" />
+    <Content Include="public\img\C5.gif" />
+    <Content Include="public\img\C6.gif" />
+    <Content Include="public\img\C7.gif" />
+    <Content Include="public\img\C8.gif" />
+    <Content Include="public\img\C9.gif" />
+    <Content Include="public\img\CA.gif" />
+    <Content Include="public\img\CJ.gif" />
+    <Content Include="public\img\CK.gif" />
+    <Content Include="public\img\CQ.gif" />
+    <Content Include="public\img\D10.gif" />
+    <Content Include="public\img\D2.gif" />
+    <Content Include="public\img\D3.gif" />
+    <Content Include="public\img\D4.gif" />
+    <Content Include="public\img\D5.gif" />
+    <Content Include="public\img\D6.gif" />
+    <Content Include="public\img\D7.gif" />
+    <Content Include="public\img\D8.gif" />
+    <Content Include="public\img\D9.gif" />
+    <Content Include="public\img\DA.gif" />
+    <Content Include="public\img\DJ.gif" />
+    <Content Include="public\img\DK.gif" />
+    <Content Include="public\img\DQ.gif" />
+    <Content Include="public\img\H10.gif" />
+    <Content Include="public\img\H2.gif" />
+    <Content Include="public\img\H3.gif" />
+    <Content Include="public\img\H4.gif" />
+    <Content Include="public\img\H5.gif" />
+    <Content Include="public\img\H6.gif" />
+    <Content Include="public\img\H7.gif" />
+    <Content Include="public\img\H8.gif" />
+    <Content Include="public\img\H9.gif" />
+    <Content Include="public\img\HA.gif" />
+    <Content Include="public\img\HIDDEN.gif" />
+    <Content Include="public\img\HJ.gif" />
+    <Content Include="public\img\HK.gif" />
+    <Content Include="public\img\HQ.gif" />
+    <Content Include="public\img\S10.gif" />
+    <Content Include="public\img\S2.gif" />
+    <Content Include="public\img\S3.gif" />
+    <Content Include="public\img\S4.gif" />
+    <Content Include="public\img\S5.gif" />
+    <Content Include="public\img\S6.gif" />
+    <Content Include="public\img\S7.gif" />
+    <Content Include="public\img\S8.gif" />
+    <Content Include="public\img\S9.gif" />
+    <Content Include="public\img\SA.gif" />
+    <Content Include="public\img\SJ.gif" />
+    <Content Include="public\img\SK.gif" />
+    <Content Include="public\img\SQ.gif" />
+    <Content Include="public\lobby\page.html" />
+    <Content Include="public\lobby\page.css" />
+    <Content Include="public\main\page.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public" />
+    <Folder Include="public\blackjack" />
+    <Folder Include="public\img" />
+    <Folder Include="public\lobby" />
+    <Folder Include="public\main" />
+    <Folder Include="scripts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

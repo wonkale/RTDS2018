@@ -58,7 +58,7 @@ Global = (function() {
         for (var i = 0; i < Object.keys(players).length; i++) {
           var player = players[Object.keys(players)[i]];
           if (!$('#' + player.userName).length) {
-            $('#players').append('<div id="' + player.userName + '" class="player"><h3>' + player.userName + '</h3><ul id=cards></ul><ul><li id=score style="font-size: 30px;"></li><li id=status></li></ul><ul id=action><li><button style="padding: 15px; width: 70px; background-color: rgb(74, 206, 78);" type="button" id="hit">HIT</button><button style="padding: 15px; width: 70px; background-color: rgba(255, 0, 0, 0.89);" type="button" id="stand">Stand</button></li></ul></div>');
+            $('#players').append('<div id="' + player.userName + '" class="player"><h3>' + player.userName + '</h3><ul id=cards></ul><ul><li id=score></li><li id=status></li></ul><ul id=action><li><button type="button" id="hit">Hit!</button></li><br><li><button type="button" id="stand">Stand</button></li></ul></div>');
           }
           $('#' + player.userName + ' #action').hide();
         }
@@ -67,7 +67,7 @@ Global = (function() {
       socket.on('newPlayer', function(player) {
         if ($('#players').length) {
           if (!$('#' + player.userName).length) {
-            $('#players').append('<div id="' + player.userName + '" class="player"><h3>' + player.userName + '</h3><ul id=cards></ul><ul><li id=score style="font-size: 30px;"></li><li id=status></li></ul><ul id=action><li><button style="padding: 15px; width: 70px; background-color: rgb(74, 206, 78);" type="button" id="hit">HIT</button><button style="padding: 15px; width: 70px; background-color: rgba(255, 0, 0, 0.89);" type="button" id="stand">Stand</button></li></ul></div>');
+            $('#players').append('<div id="' + player.userName + '" class="player"><h3>' + player.userName + '</h3><ul id=cards></ul><ul><li id=score></li><li id=status></li></ul><ul id=action><li><button type="button" id="hit">Hit!</button></li><br><li><button type="button" id="stand">Stand</button></li></ul></div>');
           }
           $('#' + player.userName + ' #action').hide();
         }
@@ -85,7 +85,7 @@ Global = (function() {
         for (var i = 0; i < Object.keys(playerList).length; i++) {
           $('#' + Object.keys(playerList)[i] + ' #cards').empty();
           for (var j = 0; j < playerList[Object.keys(playerList)[i]].cardsHand.length; j++) {
-            $('#' + Object.keys(playerList)[i] + ' #cards').append('<li><img src="img/' + playerList[Object.keys(playerList)[i]].cardsHand[j].shortName + '.png" alt="' + playerList[Object.keys(playerList)[i]].cardsHand[j].name + '" id="' + playerList[Object.keys(playerList)[i]].cardsHand[j].shortName + '"></li>');
+            $('#' + Object.keys(playerList)[i] + ' #cards').append('<li><img src="img/' + playerList[Object.keys(playerList)[i]].cardsHand[j].shortName + '.gif" alt="' + playerList[Object.keys(playerList)[i]].cardsHand[j].name + '" id="' + playerList[Object.keys(playerList)[i]].cardsHand[j].shortName + '"></li>');
           }
           $('#' + Object.keys(playerList)[i] + ' #score').text(playerList[Object.keys(playerList)[i]].score);
           if (playerList[Object.keys(playerList)[i]].status != 'NONE') {
@@ -98,12 +98,12 @@ Global = (function() {
         $('#dealer #score').empty();
         $('#dealer #status').empty();
 
-        $('#dealer #cards').append('<li><img src="img/' + dealerObj.cardsHand[0].shortName + '.png" alt="' + dealerObj.cardsHand[0].name + '" id="' + dealerObj.cardsHand[0].shortName + '"></li>');
-        $('#dealer #cards').append('<li><img src="img/HIDDEN.png" alt="HIDDEN" id="hidden"/></li>');
+        $('#dealer #cards').append('<li><img src="img/' + dealerObj.cardsHand[0].shortName + '.gif" alt="' + dealerObj.cardsHand[0].name + '" id="' + dealerObj.cardsHand[0].shortName + '"></li>');
+        $('#dealer #cards').append('<li><img src="img/HIDDEN.gif" alt="HIDDEN" id="hidden"/></li>');
       });
 
       socket.on('playerHit', function(player) {
-        $('#' + player.userName + ' #cards').append('<li><img src="img/' + player.cardsHand[player.cardsHand.length - 1].shortName + '.png" alt="' + player.cardsHand[player.cardsHand.length - 1].name + '" id="' + player.cardsHand[player.cardsHand.length - 1].shortName + '"></li>');
+        $('#' + player.userName + ' #cards').append('<li><img src="img/' + player.cardsHand[player.cardsHand.length - 1].shortName + '.gif" alt="' + player.cardsHand[player.cardsHand.length - 1].name + '" id="' + player.cardsHand[player.cardsHand.length - 1].shortName + '"></li>');
         $('#' + player.userName + ' #score').text(player.score);
         if (player.status != 'NONE') {
           $('#' + player.userName + ' #status').text(player.status);
@@ -123,7 +123,7 @@ Global = (function() {
         });
         $('#dealer #cards').empty();
         for (var i = 0; i < dealer.cardsHand.length; i++) {
-          $('#dealer #cards').append('<li><img src="img/' + dealer.cardsHand[i].shortName + '.png" alt="' + dealer.cardsHand[i].name + '" id="' + dealer.cardsHand[i].shortName + '"></li>');
+          $('#dealer #cards').append('<li><img src="img/' + dealer.cardsHand[i].shortName + '.gif" alt="' + dealer.cardsHand[i].name + '" id="' + dealer.cardsHand[i].shortName + '"></li>');
         }
         $('#dealer #score').text(dealer.score);
         if (dealer.status == 'BUST') {
@@ -153,7 +153,8 @@ Global = (function() {
 
       socket.on('errormsg', function(msg) {
         alert(msg);
-      });
+        });
+
     },
 
     homeEvents: function() {
@@ -195,7 +196,7 @@ Global = (function() {
 
       $('#mainContainer').on('click', '#stand', function() {
         socket.emit('stand');
-      });
+        });
     },
 
     eof: 0
