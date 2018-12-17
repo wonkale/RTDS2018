@@ -9,6 +9,9 @@
 #m {
   width: -webkit-fill-available;
 }
+#messages div:last-child {
+  margin-bottom: 20px;
+}
 
 #chatContainer {
   position: absolute;
@@ -112,6 +115,8 @@ ul {
 .panel-heading { 
   background-color: #3d6da7 !important;
   color: white !important;
-  /* position: fixed; */
+  position: fixed;
+  width: -webkit-fill-available;
+  text-align: -webkit-left;
 }
 

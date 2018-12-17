@@ -219,21 +219,20 @@ Global = (function() {
           $('#mainContainer').on('click', '#chatMessage', function () {
             
             if ($('#m').val() != null || $('#m').val() != '') {
-              console.log("clikediclik");
               var msg = {
                   "name": Global.getPlayerName(),
                   "message": $('#m').val()
               }
-              console.log("EMIT!");
               socket.emit('chat message', JSON.stringify(msg));
               $('#m').val('');
             }
+            return false;
           });
 
 
           socket.on('chat message', function (response) {
             console.log("we have a message!");
-            $('#messages').scrollTop = $('#messages').scrollHeight;
+            
             if (response != null) {
               var msg = JSON.parse(response);
 
@@ -256,7 +255,8 @@ Global = (function() {
               buble.appendChild(text);
               // add message to chat
               if(msg.message != null && msg.message != '' && msg.message != "" ){
-                  $('#messages').append(buble);
+                $('#messages').append(buble);
+                $('#messages').animate({ scrollTop: $(document).height() }, "slow");
               }
               buble = null;
               msg = null;
