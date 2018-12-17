@@ -1,3 +1,25 @@
+
+#messages {
+  overflow-y: scroll;
+  text-align: left;
+  white-space: normal;
+}
+
+#m {
+  width: fit-content
+}
+
+#chatContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%
+}
+.closed {
+  display: none;
+}
+
 #dealer {
   width: 100%;
   margin: auto;
@@ -49,3 +71,34 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+
+.input {
+  width: -webkit-fill-available;
+}
+
+
+
+/* AAAAAAAAAAAAAAAAAAaa */
+
+
+.message-bubble 
+{
+    padding: 10px 0px 10px 0px;
+}
+
+.message-bubble:nth-child(even) { background-color: #F5F5F5; }
+
+.message-bubble > *
+{
+    padding-left: 10px;    
+}
+
+.panel-body { padding: 0px; }
+
+.panel-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.panel-heading { background-color: #3d6da7 !important; color: white !important; }
+
