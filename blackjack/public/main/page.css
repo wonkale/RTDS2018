@@ -1,7 +1,7 @@
 ﻿#registerUser {
     height: 100%;
     align-content: center;
-    background-color: white;
+    /* background-color: white; */
     height: 370px;
     margin-top: auto;
     margin-bottom: auto;
@@ -11,10 +11,15 @@
 #username {
     width: 100px;
     border: 0 !important;
+    text-align: center;
 }
 
 #register {
     width: 100px;
+}
+
+body {
+    background-image: url('../img/background_register.jpg')
 }
 
 
