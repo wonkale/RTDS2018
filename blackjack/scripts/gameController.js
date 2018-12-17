@@ -130,7 +130,7 @@ module.exports = function GameController(io) {
         });
 
         socket.on('chat message', function (msg) {
-            io.to(socket.room).emit('chat message', msg);
+            io.local(socket.room).emit('chat message', msg);
         });
 
     });
