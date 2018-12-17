@@ -14,11 +14,10 @@
 }
 
 #chatContainer {
-  position: absolute;
-  /* overflow: scroll; */
-  bottom: 0;
+  position: fixed;
+  bottom: 10px;
   right: 0;
-  width: 50%;
+  width: 25%;
   max-height: 50%
 }
 .closed {
