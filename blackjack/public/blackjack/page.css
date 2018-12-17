@@ -9,8 +9,11 @@
 #m {
   width: -webkit-fill-available;
 }
+#messages div:first-child {
+  margin-top: 40px;
+}
 #messages div:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #chatContainer {
