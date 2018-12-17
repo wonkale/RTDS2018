@@ -29,6 +29,20 @@ Global = (function() {
       }
     },
 
+    getPlayerName: function() {
+      return playerName;
+    },
+    toggleChat: function(){
+      toggleChat = !toggleChat;
+      if (toggleChat === false){
+        $('#chatInput').addClass("closed");
+        $('#messages').addClass("closed");
+      }else{
+        $('#chatInput').removeClass("closed");
+        $('#messages').removeClass("closed");
+      }
+    },
+
     setupLobby: function() {
       socket.emit('setupLobby');
     },
