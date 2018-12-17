@@ -1,20 +1,22 @@
 
 #messages {
   overflow-y: scroll;
+  height: -webkit-fill-available;
   text-align: left;
   white-space: normal;
 }
 
 #m {
-  width: fit-content
+  width: -webkit-fill-available;
 }
 
 #chatContainer {
   position: absolute;
+  /* overflow: scroll; */
   bottom: 0;
   right: 0;
   width: 50%;
-  height: 50%
+  max-height: 50%
 }
 .closed {
   display: none;
@@ -26,7 +28,7 @@
   float: left;
   min-height: 410px;
   background: transparent url('https://www.clowerweb.com/cors/blackjack/table.png') left no-repeat;
-  background-size: 80%;
+  background-size: 100%;
 }
 #score {
   color: black;
@@ -73,32 +75,43 @@ ul {
 }
 
 .input {
-  width: -webkit-fill-available;
+  width: 80%;
 }
 
 
 
 /* AAAAAAAAAAAAAAAAAAaa */
 
+.btn {
+  background: #3d6da7;
+}
 
 .message-bubble 
 {
     padding: 10px 0px 10px 0px;
 }
 
-.message-bubble:nth-child(even) { background-color: #F5F5F5; }
+.message-bubble:nth-child(even) { 
+  background-color: #F5F5F5;
+}
 
 .message-bubble > *
 {
-    padding-left: 10px;    
+  padding-left: 10px;    
 }
 
-.panel-body { padding: 0px; }
+.panel-body { 
+  padding: 0px; 
+}
 
 .panel-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
-.panel-heading { background-color: #3d6da7 !important; color: white !important; }
+.panel-heading { 
+  background-color: #3d6da7 !important;
+  color: white !important;
+  /* position: fixed; */
+}
 

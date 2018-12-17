@@ -31,32 +31,36 @@
     </div>
     <div id=players>
     </div>
+    <!-- CHAT -->
     <div id="chatContainer" >
-        <div>
-                <div class="row">
-                    <div class="panel panel-default">
-                      <div class="panel-heading" onclick="Global.toggleChat()">Chat</div>
-                      <div class="panel-body">
-                        <div id="messages" class="container">
-                        </div>
-                        <div id="chatInput" class="panel-footer">
-                            <form action="">
-                                <div class="input-group">
-                                <input id="m" type="text" class="form-control">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">Send</button>
-                                </span>
-                            </form>
-                            </div>
-                        </div>
-                      </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <!-- header -->
+                <div class="panel-heading" onclick="Global.toggleChat()">Chat</div>
+                <div class="panel-body">
+                    <!-- Messages -->
+                    <div id="messages" class="container"></div>
+
+                    <!-- Input -->
+                    <div id="chatInput" class="panel-footer">
+                        <form action="">
+                            <div class="input-group">
+                            <input id="m" type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Send</button>
+                            </span>
+                        </form>
                     </div>
                 </div>
             </div>
-        <script>
-            $(function () {
-                var socket = io();
-                $('form').submit(function () {
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var socket = io();
+            $('form').submit(function () {
+                if($('#m').val() != null || $('#m').val() != ''){
+
                     var msg = {
                         "name":Global.getPlayerName(),
                         "message" : $('#m').val()
@@ -64,10 +68,13 @@
 
                     socket.emit('chat message',JSON.stringify(msg));
                     $('#m').val('');
-                    return false;
-                });
-                socket.on('chat message', function (response) {
+                }
+                return false;
+            });
+            socket.on('chat message', function (response) {
+                if(response != null ){
                     var msg = JSON.parse(response);
+                    
                     //create div for message
                     var buble = document.createElement("div");
                     buble.classList.add("row");
@@ -86,14 +93,14 @@
                     buble.appendChild(header);
                     buble.appendChild(text);
                     // add message to chat
-                    $('#messages').append(buble);
-                });
+                    if(msg.message != null || msg.message != '' || msg.message != "" ){
+                        $('#messages').append(buble);
+                    }
+                }
+                return false;
             });
-        </script>
-        <!-- <ul id="messages"></ul> -->
-        <!-- <form action="">
-            <input id="m" autocomplete="off" /><button>Send</button>
-        </form> -->
+        });
+    </script>
     </div>
 </div>
  

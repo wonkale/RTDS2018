@@ -37,16 +37,18 @@ module.exports = function GameController(io) {
       });
 
       socket.on('joinRoom', function(room) {
-        if (Object.keys(rooms[room].players).length < 4 && rooms[room].dealer.status == 'NONE') {
-          socket.room = room;
-          socket.join(room);
-          var blackjackGame = rooms[room];
-          blackjackGame.addPlayer(socket.username, function(player) {
-            socket.broadcast.to(room).emit('newPlayer', player);
-            socket.emit('joined', room);
-          });
-        } else {
-          socket.emit('errormsg', 'error joining room');
+        if (Object.keys(rooms.length < 0 && room != null )) {
+          if (Object.keys(rooms[room].players).length < 4 && rooms[room].dealer.status == 'NONE') {
+            socket.room = room;
+            socket.join(room);
+            var blackjackGame = rooms[room];
+            blackjackGame.addPlayer(socket.username, function(player) {
+              socket.broadcast.to(room).emit('newPlayer', player);
+              socket.emit('joined', room);
+            });
+          } else {
+            socket.emit('errormsg', 'error joining room');
+          }
         }
       });
 

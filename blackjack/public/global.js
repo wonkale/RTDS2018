@@ -17,6 +17,7 @@ Global = (function() {
     getPlayerName: function() {
       return playerName;
     },
+    
     toggleChat: function(){
       toggleChat = !toggleChat;
       if (toggleChat === false){

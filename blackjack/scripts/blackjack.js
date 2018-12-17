@@ -151,15 +151,6 @@ module.exports = function Blackjack() {
     callback(winners);
   }
 
-  this.toggleChat = function(){
-    this.toggleChat = !this.toggleChat;
-    if (this.toggleChat === false){
-      $('#messages').addClass("closed");
-    }else{
-      $('#messages').removeClass("closed");
-    }
-  }
-
   return this;
 
 }
