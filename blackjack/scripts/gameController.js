@@ -127,7 +127,11 @@ module.exports = function GameController(io) {
           io.to(socket.room).emit('turn', blackjackGame.table[blackjackGame.table.length - 1]);
           socket.room = null;
         }
-      });
+        });
+
+        socket.on('chat message', function (msg) {
+            io.to(socket.room).emit('chat message', msg);
+        });
 
     });
   }

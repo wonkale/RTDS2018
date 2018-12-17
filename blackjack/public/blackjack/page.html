@@ -7,9 +7,7 @@
                 <button type="button" id="deal">Deal!</button>
               </div></h3>
               <div style="float: right; padding-right: 15px;">
-                    
-                    
-                    <form action="">
+                    <form id="chat" action="">
                         <input id="m" autocomplete="off" /><button>Send</button>
                         <ul id="messages"></ul>
                     </form>
@@ -29,17 +27,4 @@
   </div>
     
 </div>
-<script>
-        $(function () {
-            var socket = io();
-            $('form').submit(function () {
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
-                return false;
-            });
-            socket.on('chat message', function (msg) {
-                $('#messages').append($('<li>').text(msg));
-            });
-        });
-    </script>
 

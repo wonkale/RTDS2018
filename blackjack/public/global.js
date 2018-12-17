@@ -11,6 +11,7 @@ Global = (function() {
       Global.homeEvents();
       Global.lobbyEvents();
       Global.gameEvents();
+      Global.chatEvents();
     },
 
     setupLobby: function() {
@@ -196,7 +197,20 @@ Global = (function() {
       $('#mainContainer').on('click', '#stand', function() {
         socket.emit('stand');
       });
-    },
+      },
+
+      chatEvents: function () {
+          $('#mainContainer').on('click', 'form', function () {
+                  $('#chat').submit(function () {
+                      socket.emit('chat message', $('#m').val());
+                      $('#m').val('');
+                      return false;
+                  });
+                  socket.on('chat message', function (msg) {
+                      $('#messages').append($('<li>').text(msg));
+                  });
+            });
+      },
 
     eof: 0
   };
