@@ -7,12 +7,16 @@
   width: 50%;
   float: left;
   min-height: 300px;
+  color: white;
+  align-content: center;
 }
 
 #roomList {
+  color: white;
   width: 50%;
   float: left;
   min-height: 300px;
+  
 }
 
 ul {
@@ -23,4 +27,8 @@ ul {
 
 ul:hover {
   cursor: pointer;
+}
+
+body {
+  background-image: url('../img/background_room.jpg')
 }
