@@ -3,8 +3,8 @@
   margin: auto;
   float: left;
   min-height: 410px;
-  background: transparent url('https://www.clowerweb.com/cors/blackjack/table.png') center no-repeat;
-  background-size: 100%;
+  background: transparent url('https://www.clowerweb.com/cors/blackjack/table.png') left no-repeat;
+  background-size: 80%;
 }
 #score {
   color: black;
@@ -12,6 +12,7 @@
   background: white;
   width: 40px;
 }
+
 
 #options {
   float: left;
