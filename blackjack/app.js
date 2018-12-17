@@ -28,6 +28,9 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
+    socket.on('emit', function () {
+      console.log('user sending');
+  });
 });
 
 //io.on('connection', function (socket) {
