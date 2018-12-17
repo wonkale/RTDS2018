@@ -1,0 +1,381 @@
+div[id*="pcard"] .popover { left: -95px !important; }
+div[id*="dcard"] .popover { left: -105px !important; }
+
+#wrapper {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+h3 {
+	margin: 5px 0;
+	text-align: center;
+}
+
+#game {
+	background: transparent url('https://www.clowerweb.com/cors/blackjack/table.png') 0 0 no-repeat;
+	border-radius: 5px;
+	color: #333;
+	font: 14px/17px Helvetica, Arial, Verdana, sans-serif;
+	height: 550px;
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+}
+
+.button_join {
+    background-color: rgb(111, 179, 113);
+    border: none;
+	color: white;
+	
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button_quit {
+    background-color: rgb(233, 68, 62);
+    border: none;
+	color: white;
+	
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+    
+.button_hit {
+    background-color: rgb(74, 206, 78);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button_stand {
+    background-color: rgba(255, 0, 0, 0.89);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div#dscore {
+	position: absolute;
+	bottom: 30px;
+}
+
+div#pscore {
+	position: absolute;
+	bottom: 15px;
+}
+
+div#phand, div#dhand {
+	font-weight: 700;
+	/*left: 50%;*/
+	position: absolute;
+	top: -122px;
+	white-space: nowrap;
+	width: 1000px;
+}
+
+div#phand { }
+
+div#dhand { }
+
+div[class*="card"] {
+	background: #FFF;
+	border: 6px solid #FFF;
+	border-radius: 5px;
+	box-shadow: 0 0 1px #000;
+	display: inline-block;
+	height: 106px;
+	margin: 0 5px;
+	position: absolute;
+	right: 0;
+	width: 79px;
+}
+
+.down {
+	background: #B20000 url('https://www.clowerweb.com/cors/blackjack/card.png') center center no-repeat !important;
+}
+
+span.pos-0 {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+span.pos-1 {
+	bottom: 0;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	position: absolute;
+	right: 0;
+	transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+span.rank {
+	font-size: 18px;
+}
+
+span.suit {
+	font-size: 22px;
+}
+
+.black {
+	color: #000;
+}
+
+.red {
+	color: #F00;
+}
+
+#result {
+	position: absolute;
+	bottom: 0;
+}
+
+#actions {
+	margin: 15px 0 0 0;
+	/* text-align: center; */
+	/* text-align: left; */
+}
+
+input#wager { margin-left: 5px; position: relative; top: 4px }
+
+#money, #money:before {
+	border-radius: 5px;
+	bottom: 0;
+	height: 55px;
+	padding: 7px;
+	position: absolute;
+	right: 0;
+	width: 250px;
+}
+
+#money {
+	border: 2px solid #FFC926;
+}
+
+#money:before {
+	background: #333;
+	content: '';
+	opacity: 0.8;
+}
+
+	#cash, #bank {
+		color: #FFF;
+		font: 700 18px/20px Helvetica, Arial, Verdana, sans-serif;
+		margin: 12px 0;
+		position: relative;
+		text-shadow: 1px 1px #000;
+		z-index: 1;
+	}
+
+#alert {
+	margin: 0 auto;
+	opacity: 0.95;
+	position: relative;
+	text-align: center;
+	top: 34.5%;
+	width: 500px;
+	z-index: 0;
+}
+
+/* chat box configs */
+
+.open-button {
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	/* position: fixed; */
+	bottom: 23px;
+	right: 28px;
+	width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+	resize: none;
+	min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+	background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+  }
+  .playeronecard{
+	position: absolute;
+	 visibility: visible;
+	left: 190px;
+	top: 422px;
+	height: 75px;
+	z-index: 200;
+  }
+  .playertwocard {
+	position: absolute;
+	visibility: visible;
+   left: 400px;
+   top: 455px;
+   height: 75px;
+   z-index: 200;
+  }
+
+  .playerthreecard {
+	position: absolute;
+	visibility: visible;
+	left: 645px;
+    top: 441px;
+   height: 75px;
+   z-index: 200;
+  }
+  .dealercard {
+	position: absolute;
+	visibility: visible;
+	left: 450px;
+    top: 70px;
+   height: 75px;
+   z-index: 200;
+  }
+
+  .playeronetotalvalue{
+	position: absolute;
+	visibility: visible;
+	left: 190px;
+	top: 422px;
+	height: 75px;
+	z-index: 200;
+  }
+  .playertwototalvalue{
+	position: absolute;
+	visibility: visible;
+	left: 190px;
+	top: 422px;
+	height: 75px;
+	z-index: 200;
+  }
+  .playerthreetotalvalue{
+	position: absolute;
+	visibility: visible;
+	left: 190px;
+	top: 422px;
+	z-index: 200;
+	size: 50px;
+  }
+
+  /* for new chat */
+  form, p, span {
+    margin:0;
+    padding:0; }
+  
+input { font:12px arial; }
+  
+a {
+    color:#0000FF;
+    text-decoration:none; }
+  
+    a:hover { text-decoration:underline; }
+  
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; }
+  
+#loginform { padding-top:18px; }
+  
+    #loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+  
+#usermsg {
+    width:395px;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
