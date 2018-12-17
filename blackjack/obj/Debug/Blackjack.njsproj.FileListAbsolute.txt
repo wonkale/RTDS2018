@@ -1,3 +1,6 @@
 C:\Users\Juhan\newtest\blackjack\obj\Debug\Blackjack.njsprojAssemblyReference.cache
 C:\Users\Juhan\newtest\blackjack\obj\Debug\Blackjack.njsproj.CoreCompileInputs.cache
 C:\Users\Juhan\newtest\blackjack\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Juhan\RTDS\RTDS2018\blackjack\obj\Debug\Blackjack.njsprojAssemblyReference.cache
+C:\Users\Juhan\RTDS\RTDS2018\blackjack\obj\Debug\Blackjack.njsproj.CoreCompileInputs.cache
+C:\Users\Juhan\RTDS\RTDS2018\blackjack\bin\Microsoft.NodejsTools.WebRole.dll

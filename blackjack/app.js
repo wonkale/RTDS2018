@@ -30,10 +30,8 @@ io.on('connection', function (socket) {
     });
 });
 
-io.on('connection', function (socket) {
-    console.log('message was sent');
-    socket.on('chat message', function (msg) {
-        console.log('message was sent '+msg);
-        io.emit('chat message', msg);
-    });
-});
+//io.on('connection', function (socket) {
+//    socket.on('chat message', function (msg) {
+//        io.emit('chat message', msg);
+//    });
+//});

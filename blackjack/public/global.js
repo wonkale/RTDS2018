@@ -12,6 +12,7 @@ Global = (function() {
       Global.homeEvents();
       Global.lobbyEvents();
       Global.gameEvents();
+      Global.chatEvents();
     },
 
     getPlayerName: function() {
@@ -212,7 +213,53 @@ Global = (function() {
       $('#mainContainer').on('click', '#stand', function() {
         socket.emit('stand');
       });
-    },
+      },
+
+      chatEvents: function () {
+        console.log("haaaaaaaaaa! chat event here");
+          $('#mainContainer').on('click', '#chatMessage', function () {
+            console.log("clikediclik");
+                    if ($('#m').val() != null || $('#m').val() != '') {
+
+                      var msg = {
+                          "name": Global.getPlayerName(),
+                          "message": $('#m').val()
+                      }
+                      console.log(msg);
+                      socket.emit('chat message', JSON.stringify(msg));
+                      $('#m').val('');
+                    }
+                  socket.on('chat message', function (response) {
+                    console.log("we have a message!");
+                    if (response != null) {
+                      var msg = JSON.parse(response);
+  
+                      //create div for message
+                      var buble = document.createElement("div");
+                      buble.classList.add("row");
+                      buble.classList.add("message-bubble");
+  
+                      // create name
+                      var header = document.createElement("p");
+                      header.classList.add("text-muted");
+                      header.innerText = msg.name;
+  
+                      // create text
+                      var text = document.createElement("p");
+                      text.innerText = msg.message;
+  
+                      // fuze header and text
+                      buble.appendChild(header);
+                      buble.appendChild(text);
+                      // add message to chat
+                      if(msg.message != null || msg.message != '' || msg.message != "" ){
+                          $('#messages').append(buble);
+                      }
+                  }
+                  return false;
+                  });
+            });
+      },
 
     eof: 0
   };

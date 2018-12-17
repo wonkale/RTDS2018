@@ -3,36 +3,28 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="blackjack/page.css" rel="stylesheet" type="text/css" />
 
-
 <div id=blackjack>
-   <div id=dealer>
-        <h3 style="color: white">Dealer
+    <div id=dealer>
+        <h3 style="color: white">
+            Dealer
             <div id=options>
                 <button type="button" id="exit">Exit</button>
                 <button type="button" id="deal">Deal!</button>
-              </div></h3>
-              <!-- <div style="float: right; padding-right: 15px;">
-                    
-                    
-                    <form action="">
-                        <input id="m" autocomplete="off" /><button>Send</button>
-                        <ul id="messages"></ul>
-                    </form>
-                </div>
-         -->
-        <ul id=cards>
-        </ul>
+            </div>
+        </h3>
+
+        <ul id=cards></ul>
         <ul>
-          <li id=score>
-          </li>
-          <li id=status>
-          </li>
+            <li id=score>
+            </li>
+            <li id=status>
+            </li>
         </ul>
     </div>
     <div id=players>
     </div>
     <!-- CHAT -->
-    <div id="chatContainer" >
+    <div id="chatContainer">
         <div class="row">
             <div class="panel panel-default">
                 <!-- header -->
@@ -40,41 +32,40 @@
                 <div class="panel-body">
                     <!-- Messages -->
                     <div id="messages" class="container"></div>
-
                     <!-- Input -->
                     <div id="chatInput" class="panel-footer">
-                        <form action="">
+                        
                             <div class="input-group">
-                            <input id="m" type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">Send</button>
-                            </span>
-                        </form>
+                                <input id="m" type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" id='chatMessage' type="button">Send</button>
+                                </span>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
+    <!-- <script>
         $(function () {
             var socket = io();
             $('form').submit(function () {
-                if($('#m').val() != null || $('#m').val() != ''){
+                if ($('#m').val() != null || $('#m').val() != '') {
 
                     var msg = {
-                        "name":Global.getPlayerName(),
-                        "message" : $('#m').val()
+                        "name": Global.getPlayerName(),
+                        "message": $('#m').val()
                     }
 
-                    socket.emit('chat message',JSON.stringify(msg));
+                    socket.emit('chat message', JSON.stringify(msg));
                     $('#m').val('');
                 }
                 return false;
             });
             socket.on('chat message', function (response) {
-                if(response != null ){
+                if (response != null) {
                     var msg = JSON.parse(response);
-                    
+
                     //create div for message
                     var buble = document.createElement("div");
                     buble.classList.add("row");
@@ -100,7 +91,7 @@
                 return false;
             });
         });
-    </script>
+    </script> -->
     </div>
 </div>
- 
+</div>
