@@ -1,14 +1,21 @@
 <link href="lobby/page.css" rel="stylesheet" type="text/css" />
 <body>
+    
 <div id="lobby">
+    <div class="heading">
+        <h1 id="title"></h1>  
+        <h3 id="subtitle">Please join a room or create new one!</h3>   
+    </div>
     <div id="createRoom">
         <h2>Create Room</h2>
         <span>Room Name: </span>
-        <input id='roomName' placeholder="Name your room" style="text-align: center" />
+        <input class="input" id='roomName' placeholder="Name your room" style="text-align: center" />
         <br>
         <br>
         <button type="button" id='create'>Submit</button>
     </div>
+
+
     <div id="roomList">
         <h2>Click to join a room</h2>
         <ul style="font-size: 25px; "></ul>
@@ -17,3 +24,11 @@
 
 </div>
 </body>
+
+<script>
+    console.log('Hi');
+    $(function () {
+        console.log( Global.getPlayerName());
+        $('#title').text('Welcome '+ Global.getPlayerName()+ '!');
+    });
+</script>

@@ -1,17 +1,21 @@
 ﻿#registerUser {
     height: 100%;
     align-content: center;
-    /* background-color: white; */
     height: 370px;
-    margin-top: auto;
     margin-bottom: auto;
     width: 400px;
+    background-color: #d2d0d0a6;
+    border: solid gray 1px;
+    margin-top: 10%;
+    /* padding-top: 10%; */
 }
 
 #username {
-    width: 100px;
-    border: 0 !important;
+    width: fit-content;
+    border: 0;
+    border-bottom: black solid 1px;
     text-align: center;
+    background: content-box;
 }
 
 #register {
@@ -20,6 +24,9 @@
 
 body {
     background-image: url('../img/background_register.jpg')
+}
+.input-container {
+    margin-top: inherit;
 }
 
 
