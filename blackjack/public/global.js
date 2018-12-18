@@ -24,9 +24,11 @@ Global = (function() {
       if (toggleChat === false){
         $('#chatInput').addClass("closed");
         $('#messages').addClass("closed");
+        $('#chatToggleIcon').text("+");
       }else{
         $('#chatInput').removeClass("closed");
         $('#messages').removeClass("closed");
+        $('#chatToggleIcon').text("-");
       }
     },
 
@@ -244,7 +246,7 @@ Global = (function() {
               // create name
               var header = document.createElement("p");
               header.classList.add("text-muted");
-              header.innerText = msg.name;
+              header.innerText = msg.name + ': ';
 
               // create text
               var text = document.createElement("p");

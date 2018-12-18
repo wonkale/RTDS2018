@@ -6,6 +6,15 @@
   white-space: normal;
 }
 
+#chatToggleIcon {
+  text-emphasis: bold;
+}
+
+#chatToggleIcon:hover {
+  text-decoration: underline;
+  color: aquamarine;
+}
+
 #m {
   width: -webkit-fill-available;
 }
